@@ -62,11 +62,55 @@ input[type=date]{color-scheme:dark}input[type=number]{color-scheme:dark}
 .terminal-cell{font-size:16px;overflow-wrap:anywhere}.terminal-pay{font-weight:800;color:#8ee1ae}.terminal-hours{color:#e3eaf2}.terminal-industry{color:#b5c5d5}.terminal-link .link{font-size:15px;padding:7px 9px}.terminal-details{padding:0 20px}.terminal-details:empty{display:none}.terminal-row.closed{opacity:.58}.terminal-row.closed .terminal-company strong{text-decoration:line-through}
 .terminal-details .fields{margin-bottom:14px}.terminal-details .toolbar{padding-bottom:16px}
 @media(max-width:700px){main{padding:12px 10px 35px}.panel{padding:17px 12px}.terminal-head,.terminal-grid{min-width:1020px}}
-</style></head><body><main><header><h1>Executive Career Portfolio</h1><p>A private command center for remote opportunities, applications, follow-ups, and measurable progress.</p></header>
+
+/* TERMINAL EDITION — enhanced visual system */
+:root{font-family:"IBM Plex Sans","Segoe UI",Arial,sans-serif;--gold:#f7b64b;--line:#26384a;--muted:#94a9bd;--accent:#f7b64b;color:#e4edf7;background:#050b12}
+body{background:radial-gradient(ellipse 1100px 560px at 100% 0%,#18374b 0%,transparent 68%),linear-gradient(130deg,#070f19,#0b1724 55%,#060d15);font-variant-numeric:tabular-nums}
+body:before{opacity:.24;background-image:linear-gradient(#80b5d00b 1px,transparent 1px),linear-gradient(90deg,#80b5d00b 1px,transparent 1px);background-size:42px 42px}
+body:after{content:"";position:fixed;right:-12vw;top:12vh;width:60vw;height:65vh;opacity:.075;pointer-events:none;background:repeating-linear-gradient(145deg,transparent 0 29px,#9dc8ed 30px 31px,transparent 32px 54px);mask-image:radial-gradient(ellipse,#000,transparent 72%);z-index:0}
+main{max-width:1460px;padding-top:22px}
+header{background:linear-gradient(100deg,#0e1d2b 0%,#142d40 70%,#0d202d);border:1px solid #39546a;border-radius:7px;padding:30px 34px;box-shadow:inset 0 1px #ffffff0c,0 16px 45px #0005}
+header:before{content:"EC PORTFOLIO  /  CAREER INTELLIGENCE TERMINAL  /  LIVE LOCAL DATA";font-family:Consolas,"Courier New",monospace;color:#f7b64b;letter-spacing:.16em}
+header:after{border-color:#e4aa4a2b;box-shadow:0 0 0 55px #f7b64b05,0 0 0 110px #f7b64b05}
+h1{font-weight:760;letter-spacing:-.035em}
+.panel{background:linear-gradient(155deg,#101e2d,#0b1724);border:1px solid #2c4358;border-radius:7px;padding:22px 24px;box-shadow:0 8px 25px #0003}
+.panel h2{font-family:"IBM Plex Sans","Segoe UI",sans-serif;font-size:17px;letter-spacing:.025em;text-transform:uppercase;font-weight:800}
+.panel h2:before{content:"▌";color:var(--gold);font-size:15px}
+.stat{border-radius:5px;background:linear-gradient(140deg,#152b3c,#0d2030);border-color:#36536a}
+.stat b{font-family:Consolas,"Courier New",monospace;font-size:37px;color:#f2f8ff}
+.stat small{letter-spacing:.09em}
+button,.btn,input,select,textarea,.toolbar label{border-radius:4px}
+.primary{background:#d99b37;border-color:#e4b45e;color:#0b1520}
+.success{background:#136456}
+.terminal-head{background:#192f40!important;color:#f7c46b!important}
+.terminal-row:nth-child(even){background:#101f2d!important}
+.terminal-row:hover{background:#1c3648!important}
+.terminal-pay{color:#7fe2b4}
+.pill{border-radius:4px}
+.link{color:#86cbf5}
+.note{border-radius:4px}
+.terminal-brandline{display:flex;gap:10px;align-items:center;justify-content:space-between;margin:0 0 18px;color:#9db3c6;font:700 11px Consolas,"Courier New",monospace;letter-spacing:.13em;flex-wrap:wrap}
+.terminal-brandline strong{color:#7fe2b4}
+.terminal-brandline .term-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#60cfa1;box-shadow:0 0 10px #60cfa166;margin-right:8px}
+.analytics-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.analytics-card{background:#0a1724;border:1px solid #2b4255;border-radius:5px;padding:16px}
+.analytics-card h3{font:800 12px Consolas,"Courier New",monospace;letter-spacing:.1em;color:#e6b96e;margin:0 0 15px}
+.analytics-row{display:grid;grid-template-columns:minmax(100px,1fr) minmax(70px,2fr) 36px;gap:10px;align-items:center;margin:10px 0;font-size:12px;color:#b7cadc}
+.analytics-track{height:8px;background:#1a3041;border-radius:2px;overflow:hidden}
+.analytics-fill{height:100%;background:linear-gradient(90deg,var(--accent),#75c6e5)}
+.analytics-count{text-align:right;color:#e5f1fa;font:700 12px Consolas,monospace}
+#industryFilter{accent-color:#f7b64b}
+body[data-sector="Market Research & Polling"]{--accent:#5fd1d4}
+body[data-sector="Customer Service"]{--accent:#85b8ff}
+body[data-sector="Marketing & Advertising"]{--accent:#eab76d}
+body[data-sector="Financial Services"]{--accent:#9fd39b}
+@media(max-width:800px){.analytics-grid{grid-template-columns:1fr}.terminal-brandline{font-size:10px}header{padding:23px 18px}}
+
+</style></head><body><main><div class="terminal-brandline"><span><span class="term-dot"></span>CAREER OPS / TERMINAL 01</span><span>LOCAL BROWSER STORAGE · GITHUB PUBLISHED INTERFACE</span></div><header><h1>Executive Career Portfolio</h1><p>A private command center for remote opportunities, applications, follow-ups, and measurable progress.</p></header>
 <section class="panel" id="smartPanel"><h2>Career preference intelligence</h2><p class="hint">Updates automatically as you apply, decline, or archive jobs. Insights reflect your recorded choices, not an external AI service.</p><div id="smartSummary" class="note" aria-live="polite"></div><div id="dailyPreferences" class="today"></div></section>
 <section class="panel"><h2>Performance overview</h2><div class="row"><label style="font-weight:700">Daily résumé goal <input id="goal" type="number" min="1" max="100" value="3" style="width:90px"></label><label style="font-weight:700">View date <input type="date" id="day"></label></div><div class="stats" style="margin-top:14px"><div class="stat"><b id="todaySent">0</b><small>Résumés sent on selected day</small></div><div class="stat"><b id="totalSent">0</b><small>Total sent</small></div><div class="stat"><b id="responses">0</b><small>Responses / interviews</small></div><div class="stat"><b id="pending">0</b><small>Jobs not yet applied to</small></div><div class="stat"><b id="declinedToday">0</b><small>Not interested on selected day</small></div><div class="stat"><b id="expiredTotal">0</b><small>Expired listings</small></div></div><div class="track"><div class="fill" id="fill"></div></div><p id="goalText" class="counter"></p><div id="dailyList" class="today"></div></section>
 <section class="panel"><h2>My job application list</h2><div class="row"><input id="search" placeholder="Search company, job title, notes"><select id="filter"><option value="active">Active opportunities</option><option value="all">All statuses</option><option value="not_interested">I’m not interested</option><option value="rejected">Employer rejected me</option><option value="expired">Expired listing</option><option value="not_applied">Not applied</option><option value="applied">Résumé sent</option><option value="follow_up">Follow up</option><option value="response">Employer replied</option><option value="interview">Interview</option><option value="offer">Offer</option></select></div><div class="row" style="margin-top:10px"><label class="field">Industry<select id="industryFilter"></select></label><label class="field">Job type<select id="typeFilter"></select></label></div><p class="counter" id="count"></p><div class="terminal-scroll"><div class="terminal-head"><span>Company / Position</span><span>Pay</span><span>Schedule</span><span>Industry</span><span>Status</span><span>Link</span></div><div id="jobs"></div></div></section>
-<section class="panel"><h2>Industry intelligence</h2><p class="hint">Leads, résumés sent, and employer responses by industry. Declined jobs remain in history.</p><div id="industryTrends"></div></section><section class="panel"><h2>Data & portfolio backup</h2><div class="toolbar"><button id="backup" class="secondary">⬇ Download backup (JSON)</button><label>⬆ Merge previous backup<input id="restore" type="file" accept=".json,application/json" hidden></label><button id="csv" class="secondary">⬇ Export applications (CSV)</button></div><p class="note">This file saves your changes in this browser on this device. If you move the HTML file, switch browsers, clear browser data, or use another computer, your saved records may not follow. Download a backup regularly. Use “I’m not interested” to archive a job without deleting it. Marking “Résumé sent” records your action; this tracker does not submit applications automatically.</p></section></main>
+<section class="panel" id="visualAnalytics"><h2>Portfolio analytics</h2><p class="hint">Live charts calculated from the jobs and application activity saved in this browser.</p><div class="analytics-grid"><div class="analytics-card"><h3>APPLICATION PIPELINE</h3><div id="pipelineChart"></div></div><div class="analytics-card"><h3>OPPORTUNITIES BY INDUSTRY</h3><div id="sectorChart"></div></div></div></section><section class="panel"><h2>Industry intelligence</h2><p class="hint">Leads, résumés sent, and employer responses by industry. Declined jobs remain in history.</p><div id="industryTrends"></div></section><section class="panel"><h2>Data & portfolio backup</h2><div class="toolbar"><button id="backup" class="secondary">⬇ Download backup (JSON)</button><label>⬆ Merge previous backup<input id="restore" type="file" accept=".json,application/json" hidden></label><button id="csv" class="secondary">⬇ Export applications (CSV)</button></div><p class="note">This file saves your changes in this browser on this device. If you move the HTML file, switch browsers, clear browser data, or use another computer, your saved records may not follow. Download a backup regularly. Use “I’m not interested” to archive a job without deleting it. Marking “Résumé sent” records your action; this tracker does not submit applications automatically.</p></section></main>
 <script>
 'use strict';
 const KEY='remote_resume_tracker_v1', $=id=>document.getElementById(id);
@@ -139,5 +183,19 @@ function download(name,data,type){const blob=new Blob([data],{type}),url=URL.cre
 $('backup').onclick=()=>download('resume_tracker_backup_'+date()+'.json',JSON.stringify(db,null,2),'application/json');
 $('csv').onclick=()=>{const cols=['company','title','industry','jobType','url','companyUrl','pay','schedule','source','status','appliedDate','followDate','resume','notes','statusChangedDate'];const rows=[cols.join(','),...db.jobs.map(j=>cols.map(k=>'"'+String(j[k]||'').replace(/"/g,'""')+'"').join(','))];download('job_applications_'+date()+'.csv','\ufeff'+rows.join('\r\n'),'text/csv;charset=utf-8')};
 $('restore').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const v=JSON.parse(await f.text());if(!Array.isArray(v.jobs)||!v.jobs.every(j=>j.company&&j.title))throw Error('Not a valid job tracker backup');if(!confirm('Merge this backup with your current jobs? Matching jobs will use the backup records, and jobs found only in your current tracker will be kept.'))return;const current=db.jobs.slice();const identity=j=>String(j.company||'').trim().toLowerCase()+'|'+String(j.title||'').trim().toLowerCase();const imported=new Map(v.jobs.map(j=>[identity(j),j]));const combined=current.filter(j=>!imported.has(identity(j)));const ids=new Set(combined.map(j=>Number(j.id)));let next=Math.max(1,...current.map(j=>(Number(j.id)||0)+1),...v.jobs.map(j=>(Number(j.id)||0)+1));for(const j of v.jobs){const copy={...j};if(ids.has(Number(copy.id))){copy.id=next++;}ids.add(Number(copy.id));combined.push(copy)}db={jobs:combined,nextId:Math.max(next,...combined.map(j=>(Number(j.id)||0)+1)),goal:v.goal||db.goal||3};save();expanded=null;render();alert('Backup merged: '+v.jobs.length+' imported records; '+combined.length+' total jobs.')}catch(err){alert('Could not restore: '+err.message)}finally{e.target.value=''}};
+
+/* Terminal analytics: no external services, no changes to saved data */
+const originalRender=render;
+render=function(){
+ originalRender();
+ const statusesForChart=[['Not applied',j=>!j.appliedDate&&(!j.status||j.status==='not_applied')],['Résumé sent',j=>!!j.appliedDate],['Employer replied',j=>['response','interview','offer'].includes(j.status)],['Follow up',j=>j.status==='follow_up'],['Archived / expired',j=>['not_interested','rejected','expired'].includes(j.status)]];
+ const sectors={};for(const j of db.jobs){const k=j.industry||'Other';sectors[k]=(sectors[k]||0)+1}
+ const top=Object.entries(sectors).sort((a,b)=>b[1]-a[1]).slice(0,7);
+ const barRows=(arr,el)=>{const max=Math.max(1,...arr.map(x=>x[1]));$(el).innerHTML=arr.map(([label,n])=>'<div class="analytics-row"><span>'+esc(label)+'</span><div class="analytics-track"><div class="analytics-fill" style="width:'+Math.round(n/max*100)+'%"></div></div><span class="analytics-count">'+n+'</span></div>').join('')||'<p class="hint">No data yet</p>'};
+ barRows(statusesForChart.map(([name,fn])=>[name,db.jobs.filter(fn).length]),'pipelineChart');
+ barRows(top,'sectorChart');
+ document.body.dataset.sector=$('industryFilter').value||'';
+};
+
 $('filter').value='active';populateCategories();render();
 </script></body></html>
