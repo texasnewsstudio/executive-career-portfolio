@@ -53,7 +53,7 @@ input[type=date]{color-scheme:dark}input[type=number]{color-scheme:dark}
 /* Market-watchlist view with comfortable type */
 :root{font-size:17px}body{font-size:17px;line-height:1.5}header p,.hint,.meta,.field{font-size:16px!important}input,select,textarea,button{font-size:16px!important}h2{font-size:23px!important}
 .terminal-scroll{overflow-x:auto;border:1px solid #35516b;border-radius:12px;background:#0a1928}
-.terminal-head,.terminal-grid{display:grid;grid-template-columns:minmax(260px,2.2fr) minmax(95px,.85fr) minmax(170px,1.4fr) minmax(145px,1.2fr) minmax(120px,1fr) minmax(145px,1.1fr) 90px;align-items:center;gap:10px;min-width:1160px;padding:12px 15px}
+.terminal-head,.terminal-grid{display:grid;grid-template-columns:minmax(260px,2.2fr) minmax(95px,.85fr) minmax(170px,1.4fr) minmax(145px,1.2fr) minmax(115px,.9fr) minmax(120px,1fr) minmax(145px,1.1fr) 90px;align-items:center;gap:10px;min-width:1270px;padding:12px 15px}
 .terminal-head{position:sticky;top:0;z-index:2;background:#22374b;color:#e5b26e;text-transform:uppercase;font-size:13px;font-weight:800;letter-spacing:.055em}
 .terminal-row{margin:0!important;padding:0!important;border:0!important;border-bottom:1px solid #2d4359!important;border-radius:0!important;background:transparent!important}
 .terminal-row:nth-child(even){background:#13273a!important}.terminal-row:hover{background:#1b354c!important}
@@ -162,10 +162,11 @@ a.link,.opportunity-tile a{text-underline-offset:3px}
 .size-flag{color:#9bb0c1;font-size:11px}
 @media(max-width:750px){.size-summary{grid-template-columns:repeat(2,1fr)}.size-overflow{overflow-x:auto}.size-table{min-width:690px}}
 .company-size-select{width:100%;padding:7px 4px;font-size:12px;border:1px solid #3c5668;background:#0b1e2d;color:#e1ebf3;border-radius:4px}
+.job-source-cell{font-size:12px;color:#c5d5e5;line-height:1.45}.terminal-row[hidden]{display:none!important}
 </style></head><body><main><div class="terminal-brandline"><span><span class="term-dot"></span>CAREER OPS / TERMINAL 01</span><span>LOCAL BROWSER STORAGE · GITHUB PUBLISHED INTERFACE</span></div><header><h1>Executive Career Portfolio</h1><p>A private command center for remote opportunities, applications, follow-ups, and measurable progress.</p></header>
 <section class="panel" id="smartPanel"><h2>Career preference intelligence</h2><p class="hint">Updates automatically as you apply, decline, or archive jobs. Insights reflect your recorded choices, not an external AI service.</p><div id="smartSummary" class="note" aria-live="polite"></div><div id="dailyPreferences" class="today"></div></section>
 <section class="panel"><h2>Performance overview</h2><div class="row"><label style="font-weight:700">Daily résumé goal <input id="goal" type="number" min="1" max="100" value="3" style="width:90px"></label><label style="font-weight:700">View date <input type="date" id="day"></label></div><div class="stats" style="margin-top:14px"><div class="stat"><b id="todaySent">0</b><small>Résumés sent on selected day</small></div><div class="stat"><b id="totalSent">0</b><small>Total sent</small></div><div class="stat"><b id="responses">0</b><small>Responses / interviews</small></div><div class="stat"><b id="pending">0</b><small>Jobs not yet applied to</small></div><div class="stat"><b id="declinedToday">0</b><small>Not interested on selected day</small></div><div class="stat"><b id="expiredTotal">0</b><small>Expired listings</small></div></div><div class="track"><div class="fill" id="fill"></div></div><p id="goalText" class="counter"></p><div id="dailyList" class="today"></div></section>
-<section class="panel" id="opportunityPanel"><h2>Top opportunities · Career fit / stress / income</h2><p class="hint">Five suggested matches based on the listing text. Scores are estimates, not verified workplace conditions or guaranteed earnings. Your application records are unchanged.</p><div id="opportunityList" class="opportunity-list"><p class="opportunity-muted">Calculating opportunities…</p></div></section><section class="panel"><h2>My job application list</h2><div class="row"><input id="search" placeholder="Search company, job title, notes"><select id="filter"><option value="active">Active opportunities</option><option value="all">All statuses</option><option value="not_interested">I’m not interested</option><option value="rejected">Employer rejected me</option><option value="expired">Expired listing</option><option value="not_applied">Not applied</option><option value="applied">Résumé sent</option><option value="follow_up">Follow up</option><option value="response">Employer replied</option><option value="interview">Interview</option><option value="offer">Offer</option></select></div><div class="row" style="margin-top:10px"><label class="field">Industry<select id="industryFilter"></select></label><label class="field">Job type<select id="typeFilter"></select></label><label class="field">Business size<select id="sizeFilter"><option value="">All sizes</option><option value="unknown">Unknown</option><option value="small">Small</option><option value="medium">Medium</option><option value="large">Large</option></select></label></div><p class="counter" id="count"></p><div class="terminal-scroll"><div class="terminal-head"><span>Company / Position</span><span>Pay</span><span>Schedule</span><span>Industry</span><span>Business size</span><span>Status</span><span>Link</span></div><div id="jobs"></div></div></section>
+<section class="panel" id="opportunityPanel"><h2>Top opportunities · Career fit / stress / income</h2><p class="hint">Five suggested matches based on the listing text. Scores are estimates, not verified workplace conditions or guaranteed earnings. Your application records are unchanged.</p><div id="opportunityList" class="opportunity-list"><p class="opportunity-muted">Calculating opportunities…</p></div></section><section class="panel"><h2>My job application list</h2><div class="row"><input id="search" placeholder="Search company, job title, notes"><select id="filter"><option value="active">Active opportunities</option><option value="all">All statuses</option><option value="not_interested">I’m not interested</option><option value="rejected">Employer rejected me</option><option value="expired">Expired listing</option><option value="not_applied">Not applied</option><option value="applied">Résumé sent</option><option value="follow_up">Follow up</option><option value="response">Employer replied</option><option value="interview">Interview</option><option value="offer">Offer</option></select></div><div class="row" style="margin-top:10px"><label class="field">Industry<select id="industryFilter"></select></label><label class="field">Job type<select id="typeFilter"></select></label><label class="field">Job source<select id="jobSourceFilter"><option value="">All sources</option></select></label><label class="field">Business size<select id="sizeFilter"><option value="">All sizes</option><option value="unknown">Unknown</option><option value="small">Small</option><option value="medium">Medium</option><option value="large">Large</option></select></label></div><p class="counter" id="count"></p><div class="terminal-scroll"><div class="terminal-head"><span>Company / Position</span><span>Pay</span><span>Schedule</span><span>Industry</span><span>Job source</span><span>Business size</span><span>Status</span><span>Link</span></div><div id="jobs"></div></div></section>
 <section class="panel" id="visualAnalytics"><h2>Portfolio analytics</h2><p class="hint">Live charts calculated from the jobs and application activity saved in this browser.</p><div class="analytics-grid"><div class="analytics-card"><h3>APPLICATION PIPELINE</h3><div id="pipelineChart"></div></div><div class="analytics-card"><h3>OPPORTUNITIES BY INDUSTRY</h3><div id="sectorChart"></div></div></div></section><section class="panel"><h2>Industry intelligence</h2><p class="hint">Leads, résumés sent, and employer responses by industry. Declined jobs remain in history.</p><div id="industryTrends"></div></section><section class="panel"><h2>Data & portfolio backup</h2><div class="toolbar"><button id="backup" class="secondary">⬇ Download backup (JSON)</button><label>⬆ Merge previous backup<input id="restore" type="file" accept=".json,application/json" hidden></label><button id="csv" class="secondary">⬇ Export applications (CSV)</button></div><p class="note">This file saves your changes in this browser on this device. If you move the HTML file, switch browsers, clear browser data, or use another computer, your saved records may not follow. Download a backup regularly. Use “I’m not interested” to archive a job without deleting it. Marking “Résumé sent” records your action; this tracker does not submit applications automatically.</p></section></main>
 <script>
 'use strict';
@@ -343,5 +344,50 @@ const observer=new MutationObserver(()=>refresh());
 observer.observe(list,{childList:true});
 filter.addEventListener('change',refresh);
 refresh();
+})();
+</script>
+<script>
+/* Independent source classification/filter. No changes to job records. */
+(function(){
+ const filter=document.getElementById('jobSourceFilter'),list=document.getElementById('jobs');
+ if(!filter||!list)return;
+ const names=['Indeed','LinkedIn','Glassdoor','ZipRecruiter','Monster','CareerBuilder','FlexJobs','Remote.co','We Work Remotely','Remote OK','Working Nomads','Craigslist','Google Jobs','Company careers','Staffing agency','Government board','Referral','Other / Unknown'];
+ const domains=[['indeed','Indeed'],['linkedin','LinkedIn'],['glassdoor','Glassdoor'],['ziprecruiter','ZipRecruiter'],['monster.com','Monster'],['careerbuilder','CareerBuilder'],['flexjobs','FlexJobs'],['remote.co','Remote.co'],['weworkremotely','We Work Remotely'],['remoteok','Remote OK'],['workingnomads','Working Nomads'],['craigslist','Craigslist'],['google jobs','Google Jobs'],['jobs.google','Google Jobs'],['usajobs','Government board'],['governmentjobs','Government board']];
+ function category(job){
+  const source=String(job.source||'').toLowerCase(),url=String(job.url||'').toLowerCase(),t=source+' '+url;
+  for(const pair of domains)if(t.includes(pair[0]))return pair[1];
+  if(/staffing|recruiting agency|recruitment agency/.test(source))return 'Staffing agency';
+  if(/referral|referred/.test(source))return 'Referral';
+  if(/company careers|employer website|company website|official careers/.test(source))return 'Company careers';
+  return 'Other / Unknown';
+ }
+ names.forEach(name=>{const opt=document.createElement('option');opt.value=name;opt.textContent=name;filter.appendChild(opt)});
+ let scheduled=false;
+ function update(){
+  scheduled=false;
+  let jobs=[];try{const db=JSON.parse(localStorage.getItem('remote_resume_tracker_v1')||'null');jobs=db&&Array.isArray(db.jobs)?db.jobs:[]}catch(e){}
+  const categories=new Map();
+  jobs.forEach(j=>{if(j&&j.id!=null)categories.set(String(j.id),category(j))});
+  list.querySelectorAll('.terminal-row').forEach(row=>{
+   const button=row.querySelector('[data-expand]');const id=button&&button.getAttribute('data-expand');
+   const name=categories.get(String(id))||'Other / Unknown';
+   let cell=row.querySelector('.job-source-cell');
+   const grid=row.querySelector('.terminal-grid');
+   if(grid&&!cell){
+    cell=document.createElement('div');cell.className='terminal-cell job-source-cell';
+    const industry=grid.querySelector('.terminal-industry');
+    if(industry)industry.after(cell);else grid.appendChild(cell);
+   }
+   if(cell&&cell.textContent!==name)cell.textContent=name;
+   const selected=filter.value;
+   row.hidden=Boolean(selected&&name!==selected);
+   if(row.hidden)row.style.setProperty('display','none','important');
+   else row.style.removeProperty('display');
+  });
+ }
+ function schedule(){if(scheduled)return;scheduled=true;queueMicrotask(update)}
+ new MutationObserver(schedule).observe(list,{childList:true});
+ filter.addEventListener('change',schedule);
+ schedule();
 })();
 </script></body></html>
