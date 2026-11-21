@@ -458,7 +458,7 @@ function jobs(){
  const laidback=Array.from(document.querySelectorAll('#laidBackItems .laidback-job')).map(card=>{
   const id=card.getAttribute('data-laidback-job'),rec=actions[id]||{},status=rec.status||'not_applied';
   if(rec.deleted||hidden.includes(status))return null;
-  const heading=(card.querySelector('summary strong')?.textContent||'').replace(/^\\d+\\.\\s*/, '');
+  const heading=(card.querySelector('summary strong')?.textContent||'').replace(/^\d+\.\s*/, '');
   const separator=heading.indexOf(' — '),company=separator>=0?heading.slice(0,separator):heading,title=separator>=0?heading.slice(separator+3):'';
   const facts=card.querySelectorAll('.laidback-job-body > small');
   const paySchedule=facts[0]?.textContent||'',link=card.querySelector('.laidback-job-body > a');
