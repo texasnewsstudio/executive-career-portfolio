@@ -109,6 +109,45 @@ body[data-sector="Financial Services"]{--accent:#9fd39b}
 
 /* Isolated opportunity panel; existing tracker logic remains untouched */
 .opportunity-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:10px}.opportunity-tile{border:1px solid #34536b;background:#0c1e2d;padding:15px;border-radius:5px}.opportunity-tile strong{display:block;color:#f1f6ff;font-size:14px;margin:7px 0}.opportunity-tile small{color:#aabfd0;font-size:12px}.opportunity-number{font:800 27px Consolas,monospace;color:#87d9b0}.opportunity-breakdown{color:#e6c185;font:700 11px Consolas,monospace;margin-top:8px}.opportunity-tile a{color:#93d4ff;font-size:12px}.opportunity-muted{color:#aabfd0;font-size:12px;line-height:1.5}
+
+/* Executive typography and presentation refinement — CSS only */
+:root{font-family:"Aptos","Segoe UI Variable","Segoe UI",Arial,sans-serif;--gold:#d9b77a;--accent:#d9b77a;--muted:#a5b6c6}
+body{font-family:"Aptos","Segoe UI Variable","Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;letter-spacing:.004em}
+main{max-width:1450px;padding-top:28px}
+header{padding:37px 42px;border-color:#354a5d;background:linear-gradient(112deg,#0e1b29 0%,#14283a 75%,#172d3c);box-shadow:0 18px 48px #0005,inset 0 1px #ffffff0b}
+header:before{font-family:"Aptos","Segoe UI",sans-serif;font-size:10px;letter-spacing:.21em;color:#d8b778;font-weight:700}
+h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(32px,3.3vw,47px);letter-spacing:-.025em;line-height:1.13}
+header p{font-size:14px;letter-spacing:.012em;line-height:1.7;color:#b9c9d8}
+.terminal-brandline{font-family:"Segoe UI",Arial,sans-serif;font-size:10px;letter-spacing:.18em;color:#9caec0}
+.panel{padding:25px 28px;margin-top:19px;border-color:#293e50;background:linear-gradient(145deg,#101e2b,#0d1926);box-shadow:0 10px 30px #0002}
+.panel h2{font-family:"Aptos Display","Segoe UI",Arial,sans-serif;font-size:16px;font-weight:650;letter-spacing:.065em;text-transform:uppercase;color:#f0f3f7}
+.panel h2:before{color:#c7a36d}
+.stat{padding:21px 17px;border-color:#31495c;background:linear-gradient(145deg,#152b3b,#112332)}
+.stat b{font-family:"Cascadia Code","Consolas",monospace;font-weight:600;letter-spacing:-.06em;font-size:34px}
+.stat small{font-family:"Segoe UI",Arial,sans-serif;font-weight:600;font-size:10px;letter-spacing:.105em}
+.terminal-head{font-family:"Segoe UI",Arial,sans-serif;font-weight:700;letter-spacing:.09em;text-transform:uppercase;font-size:11px}
+.terminal-company strong{font-family:"Aptos Display","Segoe UI",Arial,sans-serif;font-weight:650;letter-spacing:-.012em;font-size:17px}
+.terminal-company small{font-family:"Aptos","Segoe UI",Arial,sans-serif;font-size:13px;color:#aebfd0}
+.terminal-cell{font-size:14px;line-height:1.5}
+.terminal-pay{font-family:"Cascadia Code",Consolas,monospace;font-size:14px;letter-spacing:-.02em;font-weight:700;color:#9adab7}
+.pill{font-family:"Segoe UI",Arial,sans-serif;font-weight:650;font-size:10px;letter-spacing:.03em}
+.field{font-family:"Segoe UI",Arial,sans-serif;font-weight:650;letter-spacing:.025em}
+input,select,textarea{font-family:"Aptos","Segoe UI",Arial,sans-serif;font-size:13px;border-color:#354f63;background:#0c1c2a}
+button,.btn,.toolbar label{font-family:"Segoe UI",Arial,sans-serif;font-weight:650;letter-spacing:.015em}
+.primary{background:#c9a56c;color:#101c29;border-color:#e2bf85}
+.hint,.meta,.note{font-size:13px;line-height:1.7;color:#b1c1cf}
+.analytics-card{border-color:#2a4052}
+.analytics-card h3{font-family:"Segoe UI",Arial,sans-serif;font-weight:700;letter-spacing:.11em;color:#dfba7f}
+.analytics-row{font-family:"Aptos","Segoe UI",Arial,sans-serif;font-size:12px}
+.analytics-count,.opportunity-number,.opportunity-breakdown{font-family:"Cascadia Code",Consolas,monospace}
+.opportunity-tile{background:linear-gradient(145deg,#102131,#0b1927);border-color:#324a5d;padding:19px}
+.opportunity-tile strong{font-family:"Aptos Display","Segoe UI",Arial,sans-serif;font-size:15px;font-weight:650;line-height:1.4}
+.opportunity-number{color:#a2dfbd;font-weight:650;letter-spacing:-.045em}
+.opportunity-breakdown{color:#dfba7f;font-size:10px;line-height:1.7}
+.opportunity-tile small{font-family:"Segoe UI",Arial,sans-serif;letter-spacing:.02em}
+a.link,.opportunity-tile a{text-underline-offset:3px}
+@media(max-width:700px){header{padding:25px 20px}.panel{padding:18px 14px}h1{font-size:33px}.terminal-head,.terminal-grid{min-width:1020px}}
+
 </style></head><body><main><div class="terminal-brandline"><span><span class="term-dot"></span>CAREER OPS / TERMINAL 01</span><span>LOCAL BROWSER STORAGE · GITHUB PUBLISHED INTERFACE</span></div><header><h1>Executive Career Portfolio</h1><p>A private command center for remote opportunities, applications, follow-ups, and measurable progress.</p></header>
 <section class="panel" id="smartPanel"><h2>Career preference intelligence</h2><p class="hint">Updates automatically as you apply, decline, or archive jobs. Insights reflect your recorded choices, not an external AI service.</p><div id="smartSummary" class="note" aria-live="polite"></div><div id="dailyPreferences" class="today"></div></section>
 <section class="panel"><h2>Performance overview</h2><div class="row"><label style="font-weight:700">Daily résumé goal <input id="goal" type="number" min="1" max="100" value="3" style="width:90px"></label><label style="font-weight:700">View date <input type="date" id="day"></label></div><div class="stats" style="margin-top:14px"><div class="stat"><b id="todaySent">0</b><small>Résumés sent on selected day</small></div><div class="stat"><b id="totalSent">0</b><small>Total sent</small></div><div class="stat"><b id="responses">0</b><small>Responses / interviews</small></div><div class="stat"><b id="pending">0</b><small>Jobs not yet applied to</small></div><div class="stat"><b id="declinedToday">0</b><small>Not interested on selected day</small></div><div class="stat"><b id="expiredTotal">0</b><small>Expired listings</small></div></div><div class="track"><div class="fill" id="fill"></div></div><p id="goalText" class="counter"></p><div id="dailyList" class="today"></div></section>
