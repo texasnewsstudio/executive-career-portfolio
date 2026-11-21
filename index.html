@@ -53,7 +53,7 @@ input[type=date]{color-scheme:dark}input[type=number]{color-scheme:dark}
 /* Market-watchlist view with comfortable type */
 :root{font-size:17px}body{font-size:17px;line-height:1.5}header p,.hint,.meta,.field{font-size:16px!important}input,select,textarea,button{font-size:16px!important}h2{font-size:23px!important}
 .terminal-scroll{overflow-x:auto;border:1px solid #35516b;border-radius:12px;background:#0a1928}
-.terminal-head,.terminal-grid{display:grid;grid-template-columns:minmax(260px,2.2fr) minmax(95px,.85fr) minmax(170px,1.4fr) minmax(145px,1.2fr) minmax(145px,1.1fr) 90px;align-items:center;gap:10px;min-width:1040px;padding:12px 15px}
+.terminal-head,.terminal-grid{display:grid;grid-template-columns:minmax(260px,2.2fr) minmax(95px,.85fr) minmax(170px,1.4fr) minmax(145px,1.2fr) minmax(120px,1fr) minmax(145px,1.1fr) 90px;align-items:center;gap:10px;min-width:1160px;padding:12px 15px}
 .terminal-head{position:sticky;top:0;z-index:2;background:#22374b;color:#e5b26e;text-transform:uppercase;font-size:13px;font-weight:800;letter-spacing:.055em}
 .terminal-row{margin:0!important;padding:0!important;border:0!important;border-bottom:1px solid #2d4359!important;border-radius:0!important;background:transparent!important}
 .terminal-row:nth-child(even){background:#13273a!important}.terminal-row:hover{background:#1b354c!important}
@@ -161,11 +161,12 @@ a.link,.opportunity-tile a{text-underline-offset:3px}
 .size-table select{min-width:130px;max-width:180px;padding:7px;font-size:12px}
 .size-flag{color:#9bb0c1;font-size:11px}
 @media(max-width:750px){.size-summary{grid-template-columns:repeat(2,1fr)}.size-overflow{overflow-x:auto}.size-table{min-width:690px}}
+.company-size-select{width:100%;padding:7px 4px;font-size:12px;border:1px solid #3c5668;background:#0b1e2d;color:#e1ebf3;border-radius:4px}
 </style></head><body><main><div class="terminal-brandline"><span><span class="term-dot"></span>CAREER OPS / TERMINAL 01</span><span>LOCAL BROWSER STORAGE · GITHUB PUBLISHED INTERFACE</span></div><header><h1>Executive Career Portfolio</h1><p>A private command center for remote opportunities, applications, follow-ups, and measurable progress.</p></header>
 <section class="panel" id="smartPanel"><h2>Career preference intelligence</h2><p class="hint">Updates automatically as you apply, decline, or archive jobs. Insights reflect your recorded choices, not an external AI service.</p><div id="smartSummary" class="note" aria-live="polite"></div><div id="dailyPreferences" class="today"></div></section>
 <section class="panel"><h2>Performance overview</h2><div class="row"><label style="font-weight:700">Daily résumé goal <input id="goal" type="number" min="1" max="100" value="3" style="width:90px"></label><label style="font-weight:700">View date <input type="date" id="day"></label></div><div class="stats" style="margin-top:14px"><div class="stat"><b id="todaySent">0</b><small>Résumés sent on selected day</small></div><div class="stat"><b id="totalSent">0</b><small>Total sent</small></div><div class="stat"><b id="responses">0</b><small>Responses / interviews</small></div><div class="stat"><b id="pending">0</b><small>Jobs not yet applied to</small></div><div class="stat"><b id="declinedToday">0</b><small>Not interested on selected day</small></div><div class="stat"><b id="expiredTotal">0</b><small>Expired listings</small></div></div><div class="track"><div class="fill" id="fill"></div></div><p id="goalText" class="counter"></p><div id="dailyList" class="today"></div></section>
-<section class="panel" id="opportunityPanel"><h2>Top opportunities · Career fit / stress / income</h2><p class="hint">Five suggested matches based on the listing text. Scores are estimates, not verified workplace conditions or guaranteed earnings. Your application records are unchanged.</p><div id="opportunityList" class="opportunity-list"><p class="opportunity-muted">Calculating opportunities…</p></div></section><section class="panel"><h2>My job application list</h2><div class="row"><input id="search" placeholder="Search company, job title, notes"><select id="filter"><option value="active">Active opportunities</option><option value="all">All statuses</option><option value="not_interested">I’m not interested</option><option value="rejected">Employer rejected me</option><option value="expired">Expired listing</option><option value="not_applied">Not applied</option><option value="applied">Résumé sent</option><option value="follow_up">Follow up</option><option value="response">Employer replied</option><option value="interview">Interview</option><option value="offer">Offer</option></select></div><div class="row" style="margin-top:10px"><label class="field">Industry<select id="industryFilter"></select></label><label class="field">Job type<select id="typeFilter"></select></label></div><p class="counter" id="count"></p><div class="terminal-scroll"><div class="terminal-head"><span>Company / Position</span><span>Pay</span><span>Schedule</span><span>Industry</span><span>Status</span><span>Link</span></div><div id="jobs"></div></div></section>
-<section class="panel" id="visualAnalytics"><h2>Portfolio analytics</h2><p class="hint">Live charts calculated from the jobs and application activity saved in this browser.</p><div class="analytics-grid"><div class="analytics-card"><h3>APPLICATION PIPELINE</h3><div id="pipelineChart"></div></div><div class="analytics-card"><h3>OPPORTUNITIES BY INDUSTRY</h3><div id="sectorChart"></div></div></div></section><section class="panel" id="companySizePanel"><h2>Employer size intelligence</h2><p class="hint">See whether your applications target smaller employers or larger organizations. Size bands: Small (1–49 employees), Medium (50–499), Large (500+). Unconfirmed employers stay Unknown; these figures are not independently verified.</p><div class="size-summary" id="sizeSummary"></div><div class="size-overflow"><table class="size-table"><thead><tr><th>Employer</th><th>Company size</th><th>Confidence</th><th>Application status</th></tr></thead><tbody id="sizeRows"><tr><td colspan="4">Loading employer information…</td></tr></tbody></table></div><p class="hint">You can classify any employer manually. Your selections save separately in this browser, without changing your job application records. “Applied” counts use the statuses you've recorded.</p></section><section class="panel"><h2>Industry intelligence</h2><p class="hint">Leads, résumés sent, and employer responses by industry. Declined jobs remain in history.</p><div id="industryTrends"></div></section><section class="panel"><h2>Data & portfolio backup</h2><div class="toolbar"><button id="backup" class="secondary">⬇ Download backup (JSON)</button><label>⬆ Merge previous backup<input id="restore" type="file" accept=".json,application/json" hidden></label><button id="csv" class="secondary">⬇ Export applications (CSV)</button></div><p class="note">This file saves your changes in this browser on this device. If you move the HTML file, switch browsers, clear browser data, or use another computer, your saved records may not follow. Download a backup regularly. Use “I’m not interested” to archive a job without deleting it. Marking “Résumé sent” records your action; this tracker does not submit applications automatically.</p></section></main>
+<section class="panel" id="opportunityPanel"><h2>Top opportunities · Career fit / stress / income</h2><p class="hint">Five suggested matches based on the listing text. Scores are estimates, not verified workplace conditions or guaranteed earnings. Your application records are unchanged.</p><div id="opportunityList" class="opportunity-list"><p class="opportunity-muted">Calculating opportunities…</p></div></section><section class="panel"><h2>My job application list</h2><div class="row"><input id="search" placeholder="Search company, job title, notes"><select id="filter"><option value="active">Active opportunities</option><option value="all">All statuses</option><option value="not_interested">I’m not interested</option><option value="rejected">Employer rejected me</option><option value="expired">Expired listing</option><option value="not_applied">Not applied</option><option value="applied">Résumé sent</option><option value="follow_up">Follow up</option><option value="response">Employer replied</option><option value="interview">Interview</option><option value="offer">Offer</option></select></div><div class="row" style="margin-top:10px"><label class="field">Industry<select id="industryFilter"></select></label><label class="field">Job type<select id="typeFilter"></select></label><label class="field">Business size<select id="sizeFilter"><option value="">All sizes</option><option value="unknown">Unknown</option><option value="small">Small</option><option value="medium">Medium</option><option value="large">Large</option></select></label></div><p class="counter" id="count"></p><div class="terminal-scroll"><div class="terminal-head"><span>Company / Position</span><span>Pay</span><span>Schedule</span><span>Industry</span><span>Business size</span><span>Status</span><span>Link</span></div><div id="jobs"></div></div></section>
+<section class="panel" id="visualAnalytics"><h2>Portfolio analytics</h2><p class="hint">Live charts calculated from the jobs and application activity saved in this browser.</p><div class="analytics-grid"><div class="analytics-card"><h3>APPLICATION PIPELINE</h3><div id="pipelineChart"></div></div><div class="analytics-card"><h3>OPPORTUNITIES BY INDUSTRY</h3><div id="sectorChart"></div></div></div></section><section class="panel"><h2>Industry intelligence</h2><p class="hint">Leads, résumés sent, and employer responses by industry. Declined jobs remain in history.</p><div id="industryTrends"></div></section><section class="panel"><h2>Data & portfolio backup</h2><div class="toolbar"><button id="backup" class="secondary">⬇ Download backup (JSON)</button><label>⬆ Merge previous backup<input id="restore" type="file" accept=".json,application/json" hidden></label><button id="csv" class="secondary">⬇ Export applications (CSV)</button></div><p class="note">This file saves your changes in this browser on this device. If you move the HTML file, switch browsers, clear browser data, or use another computer, your saved records may not follow. Download a backup regularly. Use “I’m not interested” to archive a job without deleting it. Marking “Résumé sent” records your action; this tracker does not submit applications automatically.</p></section></main>
 <script>
 'use strict';
 const KEY='remote_resume_tracker_v1', $=id=>document.getElementById(id);
@@ -303,42 +304,44 @@ $('filter').value='active';populateCategories();render();
 })();
 </script>
 
+
 <script>
-/* Company-size dashboard is independent and cannot write to the job tracker storage key. */
 (function(){
- var sizeKey='career_employer_size_v1';
- var known={'rti international':{size:'large',confidence:'Estimated · moderate'}};
- var labels={small:'Small (1–49)',medium:'Medium (50–499)',large:'Large (500+)',unknown:'Unknown'};
- var overrides={};
- try{overrides=JSON.parse(localStorage.getItem(sizeKey)||'{}')||{};}catch(e){overrides={};}
- function getJobs(){try{var data=JSON.parse(localStorage.getItem('remote_resume_tracker_v1')||'null');return data&&Array.isArray(data.jobs)?data.jobs:[];}catch(e){return [];}}
- function classification(company){var key=String(company||'').trim().toLowerCase();if(Object.prototype.hasOwnProperty.call(overrides,key)&&labels[overrides[key]])return {size:overrides[key],confidence:'Manually selected'};return known[key]||{size:'unknown',confidence:'Not verified'};}
- function renderSizes(){
-  var rows=document.getElementById('sizeRows'),summary=document.getElementById('sizeSummary');if(!rows||!summary)return;
-  try{
-   var jobs=getJobs(),companies=new Map();
-   jobs.forEach(function(j){var key=String(j.company||'').trim().toLowerCase();if(!key)return;var entry=companies.get(key);if(!entry){entry={name:j.company,jobs:[]};companies.set(key,entry);}entry.jobs.push(j);});
-   var groups={small:0,medium:0,large:0,unknown:0},applied={small:0,medium:0,large:0,unknown:0};
-   rows.textContent='';
-   Array.from(companies.values()).sort(function(a,b){return a.name.localeCompare(b.name);}).forEach(function(c){
-    var info=classification(c.name),size=info.size;groups[size]++;
-    var count=c.jobs.filter(function(j){return Boolean(j.appliedDate)||['applied','follow_up','response','interview','offer'].includes(j.status);}).length;
-    applied[size]+=count;
-    var tr=document.createElement('tr'),td=document.createElement('td');td.textContent=c.name;tr.appendChild(td);
-    td=document.createElement('td');var select=document.createElement('select');select.setAttribute('aria-label','Company size for '+c.name);
-    ['unknown','small','medium','large'].forEach(function(v){var opt=document.createElement('option');opt.value=v;opt.textContent=labels[v];select.appendChild(opt);});
-    select.value=size;select.addEventListener('change',function(){overrides[c.name.trim().toLowerCase()]=select.value;try{localStorage.setItem(sizeKey,JSON.stringify(overrides));}catch(e){}renderSizes();});td.appendChild(select);tr.appendChild(td);
-    td=document.createElement('td');td.className='size-flag';td.textContent=info.confidence;tr.appendChild(td);
-    td=document.createElement('td');td.textContent=count+' applied / '+c.jobs.length+' listed';tr.appendChild(td);rows.appendChild(tr);
-   });
-   summary.textContent='';
-   ['small','medium','large','unknown'].forEach(function(v){var box=document.createElement('div');box.className='size-stat';var number=document.createElement('b');number.textContent=groups[v];box.appendChild(number);var detail=document.createElement('small');detail.textContent=labels[v]+' employers · '+applied[v]+' applications';box.appendChild(detail);summary.appendChild(box);});
-   if(!companies.size){rows.innerHTML='<tr><td colspan="4">No jobs available to classify.</td></tr>';}
-  }catch(e){rows.textContent='Employer-size summary unavailable; job tracker is unaffected.';}
- }
- if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',renderSizes);else renderSizes();
- document.addEventListener('click',function(){setTimeout(renderSizes,120);});
- document.addEventListener('change',function(e){if(e.target&&e.target.closest&&e.target.closest('#companySizePanel'))return;setTimeout(renderSizes,120);});
- window.addEventListener('storage',renderSizes);
+const KEY='career_employer_size_v1',options=['unknown','small','medium','large'];
+let choices={};try{choices=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){}
+const list=document.getElementById('jobs'),filter=document.getElementById('sizeFilter');
+if(!list||!filter)return;
+let busy=false;
+function refresh(){
+ if(busy)return;busy=true;
+ try{
+ const rows=list.querySelectorAll('.terminal-row');
+ rows.forEach(row=>{
+  const title=row.querySelector('.terminal-company strong');
+  const grid=row.querySelector('.terminal-grid');
+  if(!title||!grid)return;
+  const key=title.textContent.trim().toLowerCase();
+  const size=choices[key]|| (key==='rti international'?'large':'unknown');
+  let cell=grid.querySelector('.company-size-cell');
+  if(!cell){
+   cell=document.createElement('div');cell.className='terminal-cell company-size-cell';
+   const industry=grid.querySelector('.terminal-industry');
+   if(industry)industry.after(cell);else grid.appendChild(cell);
+  }
+  if(!cell.querySelector('select')){
+   const sel=document.createElement('select');sel.className='company-size-select';sel.setAttribute('aria-label','Business size for '+title.textContent);
+   options.forEach(value=>{const opt=document.createElement('option');opt.value=value;opt.textContent=value[0].toUpperCase()+value.slice(1);sel.appendChild(opt)});
+   sel.addEventListener('change',()=>{choices[key]=sel.value;try{localStorage.setItem(KEY,JSON.stringify(choices))}catch(e){}refresh()});
+   cell.appendChild(sel);
+  }
+  cell.querySelector('select').value=size;
+  row.style.display=(!filter.value||size===filter.value)?'':'none';
+ });
+ }catch(e){}finally{busy=false}
+}
+const observer=new MutationObserver(()=>refresh());
+observer.observe(list,{childList:true});
+filter.addEventListener('change',refresh);
+refresh();
 })();
 </script></body></html>
