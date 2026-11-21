@@ -106,11 +106,33 @@ body[data-sector="Marketing & Advertising"]{--accent:#eab76d}
 body[data-sector="Financial Services"]{--accent:#9fd39b}
 @media(max-width:800px){.analytics-grid{grid-template-columns:1fr}.terminal-brandline{font-size:10px}header{padding:23px 18px}}
 
+
+/* Career decision intelligence */
+.decision-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.decision-card{padding:16px;background:#0b1b2a;border:1px solid #35516a;border-top:3px solid var(--accent);border-radius:5px}
+.decision-card .kicker{font:800 10px Consolas,monospace;color:#e5b56b;letter-spacing:.1em;text-transform:uppercase}
+.decision-card h3{font-size:15px;margin:9px 0;color:#f0f6ff}
+.decision-card p{color:#adc1d4;font-size:12px;line-height:1.5;margin:7px 0}
+.decision-card .score{font:800 24px Consolas,monospace;color:#8ce4c0}
+.decision-card .score.warn{color:#f0bc73}
+.decision-card a{font-size:12px;color:#95d6ff}
+.decision-controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 14px}
+.decision-controls select{max-width:310px}
+.income-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.income-number{font:800 26px Consolas,monospace;color:#8ce4c0}
+.timeline-item{padding:11px 14px;border-left:2px solid #e6b566;background:#0c1b29;margin:7px 0;font-size:13px;color:#d6e4f0}
+.timeline-item small{display:block;color:#9db4c7;margin-top:5px}
+.check-label{font:700 11px Consolas,monospace;letter-spacing:.05em;color:#e9c182}
+@media(max-width:900px){.decision-grid,.income-grid{grid-template-columns:1fr}}
 </style></head><body><main><div class="terminal-brandline"><span><span class="term-dot"></span>CAREER OPS / TERMINAL 01</span><span>LOCAL BROWSER STORAGE · GITHUB PUBLISHED INTERFACE</span></div><header><h1>Executive Career Portfolio</h1><p>A private command center for remote opportunities, applications, follow-ups, and measurable progress.</p></header>
 <section class="panel" id="smartPanel"><h2>Career preference intelligence</h2><p class="hint">Updates automatically as you apply, decline, or archive jobs. Insights reflect your recorded choices, not an external AI service.</p><div id="smartSummary" class="note" aria-live="polite"></div><div id="dailyPreferences" class="today"></div></section>
 <section class="panel"><h2>Performance overview</h2><div class="row"><label style="font-weight:700">Daily résumé goal <input id="goal" type="number" min="1" max="100" value="3" style="width:90px"></label><label style="font-weight:700">View date <input type="date" id="day"></label></div><div class="stats" style="margin-top:14px"><div class="stat"><b id="todaySent">0</b><small>Résumés sent on selected day</small></div><div class="stat"><b id="totalSent">0</b><small>Total sent</small></div><div class="stat"><b id="responses">0</b><small>Responses / interviews</small></div><div class="stat"><b id="pending">0</b><small>Jobs not yet applied to</small></div><div class="stat"><b id="declinedToday">0</b><small>Not interested on selected day</small></div><div class="stat"><b id="expiredTotal">0</b><small>Expired listings</small></div></div><div class="track"><div class="fill" id="fill"></div></div><p id="goalText" class="counter"></p><div id="dailyList" class="today"></div></section>
 <section class="panel"><h2>My job application list</h2><div class="row"><input id="search" placeholder="Search company, job title, notes"><select id="filter"><option value="active">Active opportunities</option><option value="all">All statuses</option><option value="not_interested">I’m not interested</option><option value="rejected">Employer rejected me</option><option value="expired">Expired listing</option><option value="not_applied">Not applied</option><option value="applied">Résumé sent</option><option value="follow_up">Follow up</option><option value="response">Employer replied</option><option value="interview">Interview</option><option value="offer">Offer</option></select></div><div class="row" style="margin-top:10px"><label class="field">Industry<select id="industryFilter"></select></label><label class="field">Job type<select id="typeFilter"></select></label></div><p class="counter" id="count"></p><div class="terminal-scroll"><div class="terminal-head"><span>Company / Position</span><span>Pay</span><span>Schedule</span><span>Industry</span><span>Status</span><span>Link</span></div><div id="jobs"></div></div></section>
-<section class="panel" id="visualAnalytics"><h2>Portfolio analytics</h2><p class="hint">Live charts calculated from the jobs and application activity saved in this browser.</p><div class="analytics-grid"><div class="analytics-card"><h3>APPLICATION PIPELINE</h3><div id="pipelineChart"></div></div><div class="analytics-card"><h3>OPPORTUNITIES BY INDUSTRY</h3><div id="sectorChart"></div></div></div></section><section class="panel"><h2>Industry intelligence</h2><p class="hint">Leads, résumés sent, and employer responses by industry. Declined jobs remain in history.</p><div id="industryTrends"></div></section><section class="panel"><h2>Data & portfolio backup</h2><div class="toolbar"><button id="backup" class="secondary">⬇ Download backup (JSON)</button><label>⬆ Merge previous backup<input id="restore" type="file" accept=".json,application/json" hidden></label><button id="csv" class="secondary">⬇ Export applications (CSV)</button></div><p class="note">This file saves your changes in this browser on this device. If you move the HTML file, switch browsers, clear browser data, or use another computer, your saved records may not follow. Download a backup regularly. Use “I’m not interested” to archive a job without deleting it. Marking “Résumé sent” records your action; this tracker does not submit applications automatically.</p></section></main>
+<section class="panel" id="decisionPanel"><h2>Career decision intelligence</h2><p class="hint">Estimated job fit, likely stress, and earning potential based only on listing descriptions. These are screening estimates—not employer-confirmed facts.</p><div class="decision-controls"><label class="field">Rank opportunities by<select id="rankMode"><option value="balance">Best overall balance</option><option value="calm">Lowest estimated stress</option><option value="upside">Highest advertised earning potential</option></select></label></div><div class="decision-grid" id="bestOpportunities"></div></section>
+<section class="panel"><h2>Income scenario calculator</h2><p class="hint">Gross monthly income before taxes, using 52 weeks ÷ 12 months. This is a planning calculator, not a job offer.</p><div class="row"><label class="field">Hourly pay ($)<input type="number" id="incomeRate" min="0" max="500" step=".5" value="13"></label><label class="field">Hours per week<input type="number" id="incomeHours" min="1" max="80" value="20"></label></div><div class="income-grid" id="incomeScenarios" style="margin-top:14px"></div></section>
+<section class="panel"><h2>Follow-up command center</h2><p class="hint">Upcoming and overdue follow-ups from your locally saved records.</p><div id="followupCenter"></div></section>
+<section class="panel"><h2>Career activity timeline</h2><p class="hint">Most recent recorded application and status events. Older records without an event history may not appear.</p><div id="careerTimeline"></div></section>
+<section class="panel"><h2>Career stress mini-course</h2><p class="hint">A practical framework for choosing between lower-pressure work and higher-paying roles.</p><div class="decision-grid"><div class="decision-card"><div class="kicker">01 / Workload</div><h3>Know the pressure signals</h3><p>Ask about call volume, quotas, monitoring, sales targets, and required shifts. “Remote” does not automatically mean low-stress.</p></div><div class="decision-card"><div class="kicker">02 / Trade-offs</div><h3>Calculate the stress premium</h3><p>Compare extra monthly gross pay against extra hours, commission uncertainty, and how you feel after a typical shift.</p></div><div class="decision-card"><div class="kicker">03 / Boundaries</div><h3>Test before committing</h3><p>Prefer clear base pay and written expectations. Ask about training, breaks, and flexibility; revisit your stress level after the first week.</p></div></div></section><section class="panel" id="visualAnalytics"><h2>Portfolio analytics</h2><p class="hint">Live charts calculated from the jobs and application activity saved in this browser.</p><div class="analytics-grid"><div class="analytics-card"><h3>APPLICATION PIPELINE</h3><div id="pipelineChart"></div></div><div class="analytics-card"><h3>OPPORTUNITIES BY INDUSTRY</h3><div id="sectorChart"></div></div></div></section><section class="panel"><h2>Industry intelligence</h2><p class="hint">Leads, résumés sent, and employer responses by industry. Declined jobs remain in history.</p><div id="industryTrends"></div></section><section class="panel"><h2>Data & portfolio backup</h2><div class="toolbar"><button id="backup" class="secondary">⬇ Download backup (JSON)</button><label>⬆ Merge previous backup<input id="restore" type="file" accept=".json,application/json" hidden></label><button id="csv" class="secondary">⬇ Export applications (CSV)</button></div><p class="note">This file saves your changes in this browser on this device. If you move the HTML file, switch browsers, clear browser data, or use another computer, your saved records may not follow. Download a backup regularly. Use “I’m not interested” to archive a job without deleting it. Marking “Résumé sent” records your action; this tracker does not submit applications automatically.</p></section></main>
 <script>
 'use strict';
 const KEY='remote_resume_tracker_v1', $=id=>document.getElementById(id);
@@ -196,6 +218,57 @@ render=function(){
  barRows(top,'sectorChart');
  document.body.dataset.sector=$('industryFilter').value||'';
 };
+
+
+/* Decision tools intentionally do not mutate or upload job records. */
+const cleanText=v=>String(v||'').toLowerCase();
+function evaluateJob(j){
+ const t=cleanText([j.title,j.notes,j.schedule,j.jobType].join(' '));
+ const payValues=[...String(j.pay||'').matchAll(/\$\s*([\d,]+(?:\.\d+)?)/g)].map(m=>Number(m[1].replace(/,/g,'')));
+ const hourly=/\/\s*(?:hr|hour)|per\s*hour|hourly/i.test(j.pay||'');
+ const pay=hourly&&payValues.length?Math.max(...payValues):null;
+ let stress=40;
+ if(/survey|interview|research|satisfaction|data entry|inbound|support/.test(t))stress-=12;
+ if(/outbound|cold.call|sales|sdr|quota|commission|high.volume|target|prospect|performance/.test(t))stress+=27;
+ if(/no sales|low.pressure|flexible|no weekends/.test(t))stress-=12;
+ if(/call center|call volume|monitoring/.test(t))stress+=10;
+ stress=Math.max(10,Math.min(95,stress));
+ let fit=65;
+ if(/remote|work.from.home|wfh/.test(t))fit+=10;else fit-=12;
+ if(/part.time|flexible|15.hours|20.hours|16.hours|four.hour|4.hour/.test(t))fit+=10;
+ if(/survey|interview|research|satisfaction|support|appointment/.test(t))fit+=12;
+ if(stress>=65)fit-=22;
+ if(pay!==null&&pay>=10)fit+=5;
+ if(/full.time|40.hours/.test(t))fit-=18;
+ fit=Math.max(5,Math.min(99,fit));
+ const upside=pay===null?null:Math.round(pay*20*52/12);
+ return {fit,stress,pay,upside,score:Math.round(fit*.72+(100-stress)*.28)};
+}
+function decisionRender(){
+ const available=db.jobs.filter(j=>!['expired','not_interested','rejected'].includes(j.status));
+ const mode=$('rankMode').value;
+ const sorted=available.map(j=>({j,...evaluateJob(j)})).sort((a,b)=>{
+ if(mode==='calm')return a.stress-b.stress||b.fit-a.fit;
+ if(mode==='upside')return (b.upside??-1)-(a.upside??-1)||b.fit-a.fit;
+ return b.score-a.score;
+ }).slice(0,5);
+ $('bestOpportunities').innerHTML=sorted.map(x=>'<div class="decision-card"><div class="kicker">'+esc(x.j.company)+'</div><h3>'+esc(x.j.title)+'</h3><div class="score">'+x.fit+'/100 <small style="font-size:11px;color:#9db4c7">FIT</small></div><p>Estimated stress: <strong style="color:'+(x.stress>=65?'#efbd75':'#8ce4c0')+'">'+x.stress+'/100</strong> (higher = more pressure)</p><p>Advertised pay: '+esc(x.j.pay||'Not specified')+'</p><p>20 hr/week scenario: '+(x.upside===null?'Not calculable':('
+</script></body></html>+x.upside.toLocaleString()+'/mo gross'))+'</p><p class="check-label">Listing status: not independently reverified</p>'+(x.j.url?'<a href="'+esc(x.j.url)+'" target="_blank" rel="noopener noreferrer">Review job listing ↗</a>':'')+'</div>').join('')||'<p class="hint">No active opportunities.</p>';
+ const rate=Math.max(0,Number($('incomeRate').value)||0),hours=Math.max(0,Number($('incomeHours').value)||0);
+ $('incomeScenarios').innerHTML=[[15,'Conservative hours'],[hours,'Your selected hours'],[25,'Higher hours']].map(([h,label])=>'<div class="decision-card"><div class="kicker">'+label+'</div><h3>'+h+' hours / week</h3><div class="income-number">
+</script></body></html>+Math.round(rate*h*52/12).toLocaleString()+'</div><p>Gross monthly at 
+</script></body></html>+rate.toFixed(2)+'/hr</p></div>').join('');
+ const today=new Date();today.setHours(0,0,0,0);
+ const follow=db.jobs.filter(j=>j.followDate&&!['expired','not_interested','rejected'].includes(j.status)).map(j=>({j,d:new Date(j.followDate+'T12:00:00')})).filter(x=>!isNaN(x.d)).sort((a,b)=>a.d-b.d);
+ $('followupCenter').innerHTML=follow.slice(0,12).map(({j,d})=>'<div class="timeline-item"><strong>'+esc(j.company)+' — '+esc(j.title)+'</strong><small>'+esc(j.followDate)+(d<today?' · OVERDUE':' · Scheduled')+' · '+esc(j.status||'Not applied')+'</small></div>').join('')||'<p class="hint">No follow-up dates recorded yet.</p>';
+ const ev=db.jobs.flatMap(j=>(j.events||[]).map(e=>({j,e}))).sort((a,b)=>String(b.e.date||'').localeCompare(String(a.e.date||''))).slice(0,12);
+ $('careerTimeline').innerHTML=ev.map(({j,e})=>'<div class="timeline-item"><strong>'+esc(j.company)+'</strong> · '+esc(String(e.kind||'Status updated').replace(/_/g,' '))+'<small>'+esc(e.date||'Date unavailable')+' · '+esc(j.title)+'</small></div>').join('')||'<p class="hint">No recorded events yet. Activity appears as you update job statuses.</p>';
+}
+const renderBeforeDecision=render;
+render=function(){renderBeforeDecision();decisionRender()};
+$('rankMode').onchange=decisionRender;
+$('incomeRate').oninput=decisionRender;
+$('incomeHours').oninput=decisionRender;
 
 $('filter').value='active';populateCategories();render();
 </script></body></html>
