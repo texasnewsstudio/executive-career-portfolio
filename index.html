@@ -163,7 +163,52 @@ a.link,.opportunity-tile a{text-underline-offset:3px}
 @media(max-width:750px){.size-summary{grid-template-columns:repeat(2,1fr)}.size-overflow{overflow-x:auto}.size-table{min-width:690px}}
 .company-size-select{width:100%;padding:7px 4px;font-size:12px;border:1px solid #3c5668;background:#0b1e2d;color:#e1ebf3;border-radius:4px}
 .job-source-cell{font-size:12px;color:#c5d5e5;line-height:1.45}.terminal-row[hidden]{display:none!important}
-.compare-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:16px}.compare-card{border:1px solid #33495b;background:#0b1c2b;border-radius:5px;padding:18px}.compare-card h3{font:600 17px "Aptos Display","Segoe UI",sans-serif;color:#f0f3f7;margin:0 0 6px}.compare-card .compare-income{font:650 27px Consolas,monospace;color:#9adab7;margin:12px 0}.compare-card p{font-size:12px;color:#b8c9d8;line-height:1.6;margin:6px 0}.compare-card small{font-size:11px;color:#dfba7f}.compare-empty{font-size:13px;color:#b8c9d8;padding:10px 0}</style></head><body><main><div class="terminal-brandline"><span><span class="term-dot"></span>CAREER OPS / TERMINAL 01</span><span>LOCAL BROWSER STORAGE · GITHUB PUBLISHED INTERFACE</span></div><header><h1>Executive Career Portfolio</h1><p>A private command center for remote opportunities, applications, follow-ups, and measurable progress.</p></header>
+.compare-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:16px}.compare-card{border:1px solid #33495b;background:#0b1c2b;border-radius:5px;padding:18px}.compare-card h3{font:600 17px "Aptos Display","Segoe UI",sans-serif;color:#f0f3f7;margin:0 0 6px}.compare-card .compare-income{font:650 27px Consolas,monospace;color:#9adab7;margin:12px 0}.compare-card p{font-size:12px;color:#b8c9d8;line-height:1.6;margin:6px 0}.compare-card small{font-size:11px;color:#dfba7f}.compare-empty{font-size:13px;color:#b8c9d8;padding:10px 0}
+/* AviaCost-inspired visual language: CSS-only, zero application logic changes */
+:root{--gold:#ff6b25;--line:#27315f;--muted:#a1aed4;color:#f5f7ff;background:#10163e}
+html{background:#10163e}
+body{color:#f5f7ff;background-color:#111741;background-image:linear-gradient(rgba(112,132,209,.075) 1px,transparent 1px),linear-gradient(90deg,rgba(112,132,209,.075) 1px,transparent 1px),radial-gradient(ellipse 1000px 600px at 80% 0%,#20265c 0%,transparent 70%),linear-gradient(125deg,#0e1538 0%,#171d50 54%,#0d1436 100%);background-size:65px 65px,65px 65px,auto,auto;background-attachment:fixed}
+body:before{display:none}
+main{max-width:1450px}
+header{background:linear-gradient(115deg,#111740,#191f50 78%,#202658);border:1px solid #343d78;border-radius:12px;padding:44px 43px;box-shadow:0 18px 55px #05092266}
+header:before{content:"●  EXECUTIVE CAREER INTELLIGENCE";display:inline-block;position:relative;padding:8px 15px;border:1px solid #a84b37;border-radius:25px;background:#fa6a2410;color:#ff834c;font:750 11px "Segoe UI",Arial,sans-serif;letter-spacing:.1em;margin-bottom:25px}
+header:after{display:none}
+h1{font-family:"Arial","Segoe UI",sans-serif;font-size:clamp(36px,5.2vw,68px);font-weight:850;letter-spacing:-.045em;line-height:1.05;color:#fff}
+header p{color:#a9b7e0;font-size:16px;line-height:1.8;max-width:760px}
+.panel{background:linear-gradient(145deg,rgba(25,32,78,.96),rgba(15,22,59,.96));border:1px solid #30396d;border-radius:12px;box-shadow:0 14px 40px #070b2666}
+.panel h2{font-family:"Arial","Segoe UI",sans-serif;color:#fff;font-size:19px;font-weight:800;letter-spacing:-.025em;text-transform:none}
+.panel h2:after{background:linear-gradient(90deg,#ff6b2555,transparent)}
+.panel h2:before{color:#ff6b25}
+.stat,.size-stat,.opportunity-tile,.compare-card,.analytics-card{background:linear-gradient(145deg,#1a2356,#141b47);border:1px solid #343d77;border-radius:9px}
+.stat:before{background:linear-gradient(90deg,#ff6b25,transparent)}
+.stat b{color:#fff;font-family:"Arial","Segoe UI",sans-serif;font-weight:850;font-size:39px;letter-spacing:-.055em}
+.stat small,.size-stat small{color:#a7b4d9;letter-spacing:.095em}
+.stat:nth-child(2n) b{color:#ff742d}
+.hint,.meta,.note,.opportunity-muted,.compare-card p{color:#aab8db}
+.terminal-head{background:#252c64;color:#ff8a50;border-bottom:1px solid #46518c;font-size:11px;letter-spacing:.095em}
+.terminal-row{border-bottom-color:#343d73!important}
+.terminal-company strong,.compare-card h3{color:#fff}
+.terminal-company small,.terminal-cell{color:#c5cdec}
+.terminal-pay,.opportunity-number,.compare-card .compare-income{color:#fff}
+.opportunity-breakdown,.analytics-card h3,.size-table th{color:#ff874a}
+.terminal-scroll{border-color:#354077}
+input,select,textarea,.business-size-select,.company-size-select{background:#11183f;color:#f6f7ff;border:1px solid #444e88;border-radius:6px}
+input::placeholder,textarea::placeholder{color:#8998c6}
+.field{color:#b8c4e5}
+button,.btn{border-radius:6px}
+.primary{background:#f26626;color:#fff;border-color:#ff8b51}
+.secondary{background:#28336c;color:#f2f4ff;border-color:#48558c}
+.success{background:#175c55;color:#d3fff1;border-color:#32887b}
+.warning{background:#634524;color:#ffe5c9;border-color:#a56c3e}
+a.link,.opportunity-tile a{color:#ff995f}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline-color:#ff8a4b}
+.track,.analytics-track{background:#0c1337;border-color:#343d75}
+.fill,.analytics-fill{background:linear-gradient(90deg,#e65c24,#ff8c4a);box-shadow:none}
+.pill{border-radius:5px}
+.counter{color:#b5c1e3}
+@media(max-width:700px){header{padding:30px 22px}h1{font-size:38px}.panel{padding:19px 15px}}
+
+</style></head><body><main><div class="terminal-brandline"><span><span class="term-dot"></span>CAREER OPS / TERMINAL 01</span><span>LOCAL BROWSER STORAGE · GITHUB PUBLISHED INTERFACE</span></div><header><h1>Executive Career Portfolio</h1><p>A private command center for remote opportunities, applications, follow-ups, and measurable progress.</p></header>
 <section class="panel" id="smartPanel"><h2>Career preference intelligence</h2><p class="hint">Updates automatically as you apply, decline, or archive jobs. Insights reflect your recorded choices, not an external AI service.</p><div id="smartSummary" class="note" aria-live="polite"></div><div id="dailyPreferences" class="today"></div></section>
 <section class="panel"><h2>Performance overview</h2><div class="row"><label style="font-weight:700">Daily résumé goal <input id="goal" type="number" min="1" max="100" value="3" style="width:90px"></label><label style="font-weight:700">View date <input type="date" id="day"></label></div><div class="stats" style="margin-top:14px"><div class="stat"><b id="todaySent">0</b><small>Résumés sent on selected day</small></div><div class="stat"><b id="totalSent">0</b><small>Total sent</small></div><div class="stat"><b id="responses">0</b><small>Responses / interviews</small></div><div class="stat"><b id="pending">0</b><small>Jobs not yet applied to</small></div><div class="stat"><b id="declinedToday">0</b><small>Not interested on selected day</small></div><div class="stat"><b id="expiredTotal">0</b><small>Expired listings</small></div></div><div class="track"><div class="fill" id="fill"></div></div><p id="goalText" class="counter"></p><div id="dailyList" class="today"></div></section>
 <section class="panel" id="opportunityPanel"><h2>Top opportunities · Career fit / stress / income</h2><p class="hint">Five suggested matches based on the listing text. Scores are estimates, not verified workplace conditions or guaranteed earnings. Your application records are unchanged.</p><div id="opportunityList" class="opportunity-list"><p class="opportunity-muted">Calculating opportunities…</p></div></section><section class="panel" id="executiveCompare"><h2>Executive opportunity comparison</h2><p class="hint">Compare up to three positions side by side, inspired by AviaCost's decision-focused modeling. Monthly figures are estimates of gross income before taxes, not guaranteed offers.</p><div class="row"><label class="field">Opportunity A<select id="compareA"></select></label><label class="field">Opportunity B<select id="compareB"></select></label><label class="field">Opportunity C<select id="compareC"></select></label><label class="field">Hours per week<input id="compareHours" type="number" min="1" max="60" value="20" style="width:90px"></label></div><div id="compareResults" class="compare-results"></div></section><section class="panel"><h2>My job application list</h2><div class="row"><input id="search" placeholder="Search company, job title, notes"><select id="filter"><option value="active">Active opportunities</option><option value="all">All statuses</option><option value="not_interested">I’m not interested</option><option value="rejected">Employer rejected me</option><option value="expired">Expired listing</option><option value="not_applied">Not applied</option><option value="applied">Résumé sent</option><option value="follow_up">Follow up</option><option value="response">Employer replied</option><option value="interview">Interview</option><option value="offer">Offer</option></select></div><div class="row" style="margin-top:10px"><label class="field">Industry<select id="industryFilter"></select></label><label class="field">Job type<select id="typeFilter"></select></label><label class="field">Job source<select id="jobSourceFilter"><option value="">All sources</option></select></label><label class="field">Business size<select id="sizeFilter"><option value="">All sizes</option><option value="unknown">Unknown</option><option value="small">Small</option><option value="medium">Medium</option><option value="large">Large</option></select></label></div><p class="counter" id="count"></p><div class="terminal-scroll"><div class="terminal-head"><span>Company / Position</span><span>Pay</span><span>Schedule</span><span>Industry</span><span>Job source</span><span>Business size</span><span>Status</span><span>Link</span></div><div id="jobs"></div></div></section>
