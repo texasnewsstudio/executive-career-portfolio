@@ -56,3 +56,11 @@ Servicebasix Garage Doors; In His Hands Birth Supply; 10:10 Real Estate Group / 
 - Servicebasix Garage Doors is the benchmark: modest hourly pay, limited phone/email work, simple work-order scheduling, explicitly relatively low call volume. It is already in the portfolio, not a new lead.
 - Distinguish 'already suggested' from 'explicitly rejected': both must not be recycled as NEW leads, but don't claim all were rejected.
 - This file is a persistent reference in GitHub, not a guarantee that ChatGPT's account Memory summary was updated.
+
+## Checked 2026-11-22 — do not add as new laid-back leads
+- Paragon Planners — third-party scheduler listing appears active, but official employment page explicitly says not currently hiring. Exclude until employer reopens.
+- Arcco Group — already in main tracker; also strict one-minute callback requirement, not laid-back.
+- TTPStudio — already in main tracker; sales/commission duties.
+- Smart AI Automations — cold-calling appointment setting; exclude for pressure.
+- Axelon (axelonsc.com) — remote part-time scheduler listing seen; employer identity, Texas eligibility, actual hiring and call volume not independently confirmed. Hold for verification, not a qualified lead.
+- ServiceBasix — already in laid-back list and user left voicemail 2026-11-22; follow-up only, not new.
