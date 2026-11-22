@@ -1,0 +1,30 @@
+name: Daily CareerFinder
+on:
+  schedule:
+    - cron: '17 14 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: daily-careerfinder
+  cancel-in-progress: false
+jobs:
+  find-jobs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check employer job boards
+        run: python scripts/daily_careerfinder.py
+      - name: Publish only changed job data
+        run: |
+          if ! git diff --quiet -- data/fresh-jobs.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/fresh-jobs.json
+            git commit -m "Update verified candidate job leads"
+            git push
+          fi
