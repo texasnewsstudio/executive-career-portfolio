@@ -1,0 +1,17 @@
+{
+  "notes": "Public Greenhouse boards to check. Tokens are tentative until a successful feed response; unavailable boards are skipped. Only very strict matching jobs appear, and no match is not a failure.",
+  "greenhouse": [
+    {
+      "name": "YouGov",
+      "token": "yougov"
+    },
+    {
+      "name": "Ipsos",
+      "token": "ipsos"
+    },
+    {
+      "name": "Dynata",
+      "token": "dynata"
+    }
+  ]
+}
