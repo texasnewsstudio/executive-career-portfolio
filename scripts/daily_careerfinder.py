@@ -12,9 +12,9 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 BOARDS = json.loads((ROOT / "data/employer-boards.json").read_text())["greenhouse"]
 OUT = ROOT / "data/fresh-jobs.json"
 BLOCKED = (ROOT / "JOB_SEARCH_DO_NOT_REPEAT.md").read_text().casefold()
-REMOTE = re.compile(r"\\b(remote|work from home|work-from-home|telecommut)\\b", re.I)
-PART = re.compile(r"\\b(part[ -]?time|15[ -]?20 hours|10[ -]?20 hours|20 hours per week)\\b", re.I)
-TEXAS = re.compile(r"\\b(texas|\\btx\\b|united states|\\busa\\b|anywhere in the us)\\b", re.I)
+REMOTE = re.compile(r"\b(remote|work from home|work-from-home|telecommut)\b", re.I)
+PART = re.compile(r"\b(part[ -]?time|15[ -]?20 hours|10[ -]?20 hours|20 hours per week)\b", re.I)
+TEXAS = re.compile(r"\b(texas|\btx\b|united states|\busa\b|anywhere in the us)\b", re.I)
 ROLE = re.compile(r"survey|interview|research|customer satisfaction|appointment|scheduling|customer support|customer service", re.I)
 EXCLUDE = re.compile(r"commission.only|cold.call|sales quota|high.volume|fast.paced|full.time|on.site|on-site|hybrid|travel required|bilingual required|spanish required", re.I)
 
@@ -24,7 +24,7 @@ def fetch(url):
         return json.load(response)
 
 def clean(text):
-    return re.sub(r"\\s+", " ", html.unescape(re.sub(r"<[^>]*>", " ", text or ""))).strip()
+    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]*>", " ", text or ""))).strip()
 
 results = []
 for board in BOARDS:
@@ -46,10 +46,10 @@ for board in BOARDS:
             continue
         if EXCLUDE.search(excerpt):
             continue
-        if re.search(r"\\b(except|excluding|not available in|must reside outside)\\b.{0,45}\\b(texas|\\btx\\b)", excerpt, re.I):
+        if re.search(r"\b(except|excluding|not available in|must reside outside)\b.{0,45}\b(texas|\btx\b)", excerpt, re.I):
             continue
         # Do not recycle companies named in the permanent do-not-repeat file.
-        if re.search(r"(?<!\\w)" + re.escape(employer.casefold()) + r"(?!\\w)", BLOCKED):
+        if re.search(r"(?<!\w)" + re.escape(employer.casefold()) + r"(?!\w)", BLOCKED):
             continue
         url = job.get("absolute_url", "")
         if not url.startswith("https://"):
