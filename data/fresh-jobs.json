@@ -1,5 +1,66 @@
 {
-  "updated_at": null,
-  "source": "Automated public employer job boards; listings require independent confirmation",
-  "jobs": []
+  "updated_at": "2026-11-23T09:29:00-06:00",
+  "source": "Employer-hosted postings found November 23, 2026; openings and eligibility require confirmation. These are leads, not submitted applications.",
+  "jobs": [
+    {
+      "company": "FloSports",
+      "title": "Seasonal Customer Support Representative, Trackwrestling",
+      "location": "Remote — United States",
+      "hours": "Part-time, seasonal; schedule to confirm",
+      "pay": "Not stated",
+      "call_volume": "Not stated",
+      "verification": "Employer-hosted posting located; confirm still accepting applications and Texas eligibility.",
+      "url": "https://jobs.ashbyhq.com/flosports/c2cb0198-d55e-44a6-942b-7fa96e69e44e"
+    },
+    {
+      "company": "Maze",
+      "title": "Panel Recruitment Coordinator",
+      "location": "Remote — US, EST/CST",
+      "hours": "15 hours/week, contractor",
+      "pay": "$35–$41/hour",
+      "call_volume": "Not stated; research operations",
+      "verification": "Employer-hosted listing; higher skill requirements, review before applying.",
+      "url": "https://jobs.ashbyhq.com/mazedesign/a81d9610-1b89-4135-b001-7dacfa49d541"
+    },
+    {
+      "company": "Clair",
+      "title": "Customer Support Representative, Part-Time",
+      "location": "Remote — United States",
+      "hours": "Three days/week, 11am–8pm ET; posting has conflicting full-time label",
+      "pay": "$21–$22/hour",
+      "call_volume": "Not stated",
+      "verification": "Employer-hosted listing; part-time title conflicts with full-time metadata; verify schedule.",
+      "url": "https://jobs.ashbyhq.com/clair/3a7c6ec2-eccc-468a-827c-096884d21b5a"
+    },
+    {
+      "company": "NORY",
+      "title": "Customer Happiness Representative",
+      "location": "Remote — NY-based employer; Texas eligibility unconfirmed",
+      "hours": "10–30 hours/week, seasonal",
+      "pay": "$20/hour",
+      "call_volume": "Not stated",
+      "verification": "Employer-hosted listing; summer-season role, check whether current hiring is active.",
+      "url": "https://jobs.ashbyhq.com/nory-co/64d1e243-9e00-41ce-b0ee-28aedfdb94d6"
+    },
+    {
+      "company": "Progress Partners",
+      "title": "US Merchant Accounts & Payments Operations Coordinator",
+      "location": "Remote — United States",
+      "hours": "5–10 hours/week",
+      "pay": "$1,500–$2,000/month advertised",
+      "call_volume": "Not stated; administrative coordination",
+      "verification": "Employer-hosted listing; financial/identity verification duties require careful due diligence.",
+      "url": "https://jobs.ashbyhq.com/progress-partners/29e4f83c-ba15-4b8d-b233-b7ef756c0b81"
+    },
+    {
+      "company": "Lev Haolam",
+      "title": "Sales & Customer Engagement Specialist",
+      "location": "Remote — US business hours",
+      "hours": "10–15 hours/week",
+      "pay": "Not stated",
+      "call_volume": "Sales calls and follow-ups",
+      "verification": "Employer-hosted listing; sales pressure makes this lower priority.",
+      "url": "https://jobs.ashbyhq.com/LevHaolam/303a01e3-9c5c-408c-94e7-5feff8ed5756"
+    }
+  ]
 }
