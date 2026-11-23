@@ -61,6 +61,46 @@
       "call_volume": "Sales calls and follow-ups",
       "verification": "Employer-hosted listing; sales pressure makes this lower priority.",
       "url": "https://jobs.ashbyhq.com/LevHaolam/303a01e3-9c5c-408c-94e7-5feff8ed5756"
+    },
+    {
+      "company": "Photoroom",
+      "title": "Customer Support Agent — Freelance Part-Time",
+      "location": "Remote — USA, Central Time eligible",
+      "hours": "Monday–Friday, 9 AM–3 PM Eastern or equivalent; confirm actual hours",
+      "pay": "$18–$20/hour",
+      "call_volume": "Chat-based app support",
+      "verification": "Employer-hosted posting; part-time description conflicts with full-time metadata.",
+      "url": "https://jobs.ashbyhq.com/photoroom/21d7187d-9d43-4d19-8580-13bf6513f1c0/"
+    },
+    {
+      "company": "Hire Hangar",
+      "title": "Digital Patient Success Coordinator",
+      "location": "Remote — US eligibility to confirm",
+      "hours": "Part-time, flexible on-call responsiveness",
+      "pay": "Not stated",
+      "call_volume": "SMS and scheduled phone consultations",
+      "verification": "Recruiter-hosted posting; employer identity, location eligibility and compensation need verification.",
+      "url": "https://jobs.ashbyhq.com/hirehangar/8ef7aa14-c3ad-43c0-a85a-433fcf5d7cb2/"
+    },
+    {
+      "company": "Sciemo",
+      "title": "Customer Success & Support Engineer — Part Time",
+      "location": "Remote — United States",
+      "hours": "20 hours/week, contract",
+      "pay": "$40–$50/hour",
+      "call_volume": "Support desk, training and office hours",
+      "verification": "Employer-hosted posting; technically demanding stretch opportunity.",
+      "url": "https://jobs.ashbyhq.com/sciemo/b0caa040-4ae7-45ca-9750-52e6d1ab1dc0"
+    },
+    {
+      "company": "RemodelBoom",
+      "title": "Appointment Setter — Warm Leads",
+      "location": "Remote — United States",
+      "hours": "Part-time stated in description; listing metadata says full-time",
+      "pay": "Not stated",
+      "call_volume": "Warm-lead outbound calls and sales follow-up",
+      "verification": "Employer-hosted posting; sales metrics and conflicting hours make this lower priority.",
+      "url": "https://jobs.ashbyhq.com/remodelboom/ad747146-01f0-49d9-919b-defa6ac5daab"
     }
   ]
 }
